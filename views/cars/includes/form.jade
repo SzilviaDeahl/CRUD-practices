@@ -1,0 +1,14 @@
+p
+  label(for='make') Make and Model:
+p   
+  input(id='make' type='text' name='name' value=(car ? car.name : ''))
+p  
+  label(for='year') Year: 
+p  
+  input(id='year' type='year' name='year' value=(car ? car.year : ''))
+p  
+  label(for='color') Color: 
+p  
+  input(id='color' type='text' name='color' value=(car ? car.color:'')) 
+p  
+  input(type='submit' value='Submit')

@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  h1 My Cars
+  table
+    thead
+      tr
+        th Make and Model 
+        th Year 
+        th Color
+    tbody
+    if cars
+      for car in cars
+        tr
+          td
+            a(href='/cars/' + car._id + '/edit')=car.name
+          td= car.year
+          td= car.color

@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  h1 Edit Cars
+  form(action='/cars/' + car._id + '/update' method='POST')
+    include includes/form
+  form(action='/cars/' + car._id + '/delete' method='POST')
+    input(type='submit' value='Delete') 
+      
+      
+      
+      
+      
+      
+      
+      
+      
