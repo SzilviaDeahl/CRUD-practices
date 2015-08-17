@@ -3,5 +3,18 @@ extends ../layout
 block content
 
   h1 Phones
-  
+  if phones
+    for phone in phones
+      table
+        thead
+          tr 
+            th Type
+            th Year
+            th Color
+        tbody 
+          tr
+            td= phone.type
+            td= phone.year 
+            td= phone.color 
+
   
