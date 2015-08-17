@@ -19,6 +19,12 @@ router.post('/books/create', function (req, res, next) {
   });
 });
 
+router.get('/books/show', function (req, res, next) {
+  booksCollection.find({}, function (err, books) {
+    res.render('books/show', {books: books})
+  });
+});
+
 
 
 
