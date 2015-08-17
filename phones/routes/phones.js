@@ -22,7 +22,9 @@ router.post('/phones/create', function (req, res, next) {
 });
 
 router.get('/phones/show', function (req, res, next) {
-  res.render('phones/show')
+  phonesCollection.find({}, function (err, phones) {
+    res.render('phones/show', {phones: phones})
+  });
 });
 
 module.exports = router;
