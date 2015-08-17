@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+
+  h1= book.title
+  form(action='/books/' + book._id + '/update' method='POST')
+    include includes/form
+  form(action='/books/' + book._id + '/delete' method='POST')
+    input(id='delete' type='submit' value='Delete')
