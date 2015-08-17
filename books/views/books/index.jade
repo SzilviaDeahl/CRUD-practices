@@ -2,4 +2,18 @@ extends ../layout
 
 block content
 
-  
+  h1 My books
+  table
+    thead
+      tr
+        th Title
+        th Author
+        th Published by
+  tbody
+  if books
+    for book in books
+      tr
+        td= book.title
+        td= book.author
+        td= book.publicist
+  a(href='/books/new') Add New Book

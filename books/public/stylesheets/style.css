@@ -1,8 +1,16 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 
 a {
   color: #00B7FF;
+}
+
+a.books {
+  border: 1px dotted blue;
+  color: purple;
+  text-decoration: none;
+  padding: 10px;
 }
