@@ -40,4 +40,10 @@ router.post('/phones/:id/update', function (req, res, next) {
   });
 });
 
+router.post('/phones/:id/delete', function (req, res, next) {
+  phonesCollection.remove({_id: req.params.id}, req.body).then(function (phone) {
+    res.redirect('/phones')
+  });
+});
+
 module.exports = router;

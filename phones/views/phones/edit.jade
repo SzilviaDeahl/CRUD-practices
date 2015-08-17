@@ -4,3 +4,5 @@ block content
   h1 Edit phone details
   form(action='/phones/' + phone._id + '/update' method='POST')
     include includes/form
+  form(action='/phones/' + phone._id + '/delete' method='POST')
+    input(type='submit' value='Delete')
