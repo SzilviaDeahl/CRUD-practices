@@ -3,18 +3,18 @@ extends ../layout
 block content
 
   h1 Phones
-  if phones
-    for phone in phones
-      table
-        thead
-          tr 
-            th Type
-            th Year
-            th Color
-        tbody 
-          tr
-            td= phone.type
-            td= phone.year 
-            td= phone.color 
+  table
+    thead
+      tr 
+        th Type
+        th Year
+        th Color
+    tbody
+    if phones
+      for phone in phones 
+        tr
+          td= phone.make
+          td= phone.year 
+          td= phone.color 
   a(href='/phones/new') Add New Phone
   

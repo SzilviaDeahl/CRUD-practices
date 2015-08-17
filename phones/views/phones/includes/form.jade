@@ -1,0 +1,14 @@
+p
+  label(for='make') Type Of Phone
+p
+  input(id='make' name='make' type='text' autofocus value=(phone ? phone.make : ''))
+p
+  label(for='year') Year
+p
+  input(id='year' name='year' type='text' value=(phone ? phone.year : ''))
+p
+  label(for='color') Color
+p
+  input(id='color' name='color' type='text' value=(phone ? phone.color : ''))
+p
+  input(type='submit' value='Add new phone')

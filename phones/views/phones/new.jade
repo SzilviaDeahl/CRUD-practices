@@ -3,17 +3,4 @@ extends ../layout
 block content
   h1 Phones
   form(action='/phones/create' method='POST')
-    p
-      label(for='make') Type Of Phone
-    p
-      input(id='make' name='make' type='text' autofocus)
-    p
-      label(for='year') Year
-    p
-      input(id='year' name='year' type='text')
-    p
-      label(for='color') Color
-    p
-      input(id='color' name='color' type='text')
-    p
-      input(type='submit' value='Add new phone')
+    include includes/form

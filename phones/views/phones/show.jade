@@ -13,6 +13,7 @@ block content
     if phones
       for phone in phones 
         tr
-          td= phone.make
+          td 
+            a(href='/phones/' + phone._id + '/edit')=phone.make
           td= phone.year 
           td= phone.color 

@@ -27,4 +27,17 @@ router.get('/phones/show', function (req, res, next) {
   });
 });
 
+router.get('/phones/:id/edit', function (req, res, next) {
+  phonesCollection.findOne({_id: req.params.id}, function (err, phone) {
+    console.log(req.params.id);
+    res.render('phones/edit', {phone: phone})
+  });
+});
+
+router.post('/phones/:id/update', function (req, res, next) {
+  phonesCollection.update({_id: req.params.id}, req.body).then(function (phone) {
+    res.redirect('/phones')
+  });
+});
+
 module.exports = router;
