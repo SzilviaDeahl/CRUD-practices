@@ -1,0 +1,7 @@
+extends ../layout
+
+block content
+
+  h1 Add New book
+  form(action='/books/create' method='POST')
+    include includes/form

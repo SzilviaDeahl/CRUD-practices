@@ -1,0 +1,14 @@
+p
+  label(for='title') Title 
+p
+  input(id='title' name='title' type='text' autofocus value=(books ? book.title : ''))
+p
+  label(for='author') Author 
+p
+  input(id='author' name='author' type='text' value=(books ? book.author : ''))
+p
+  label(for='publicist') Published by 
+p
+  input(id='publicist' name='publicist' type='text' value=(books ? book.publicist : ''))
+p
+  input(type='submit' value='Submit')
