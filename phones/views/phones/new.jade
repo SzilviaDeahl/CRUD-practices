@@ -2,11 +2,11 @@ extends ../layout
 
 block content
   h1 Phones
-  form(action='new/create' method='POST')
+  form(action='/phones/create' method='POST')
     p
       label(for='make') Type Of Phone
     p
-      input(id='make' name='make' type='text')
+      input(id='make' name='make' type='text' autofocus)
     p
       label(for='year') Year
     p
