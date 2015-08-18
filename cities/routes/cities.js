@@ -4,8 +4,10 @@ var db = require('monk')('localhost/myCities');
 var citiesCollection = db.get('cities');
 
 
-router.get('/cities', function (req, res, next) {
-  res.render('index')
+router.get('/cities/index', function (req, res, next) {
+  citiesCollection.find({}, function (err, cities) {
+    res.render('cities/index', {cities: cities})
+  });
 });
 
 module.exports = router;

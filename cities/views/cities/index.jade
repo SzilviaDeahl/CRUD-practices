@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+
+  h1 Hello To My Favorite Cities
+  table
+    thead
+      tr
+        th City
+        th Country
+        th Size
+    tbody
+    if cities
+      for city in cities  
+        tr
+          td 
+            a(href='/cities' + city._id + '/edit')=city.name
+          td= city.country
+          td= city.size 
+  p
+    a(href='/cities/new') Add New City
