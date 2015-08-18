@@ -14,7 +14,7 @@ block content
       for city in cities  
         tr
           td 
-            a(href='/cities' + city._id + '/edit')=city.name
+            a(href='/cities/' + city._id + '/edit')=city.name
           td= city.country
           td= city.size 
   p
