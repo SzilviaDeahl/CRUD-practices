@@ -1,0 +1,14 @@
+p
+  label(for='name') City 
+p
+  input(id='name' type='text' name='name' value=(city ? city.name : ''))
+p
+  label(for='country') Country 
+p
+  input(id='country' name='country' type='text' value=(city ? city.country : ''))
+p
+  label(for='size') Size 
+p
+  input(id='size' name='size' type='text' value=(city ? city.size : ''))
+p
+  input(type='submit' value='Submit')

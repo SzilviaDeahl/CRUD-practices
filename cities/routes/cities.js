@@ -10,4 +10,14 @@ router.get('/cities/index', function (req, res, next) {
   });
 });
 
+router.get('/cities/new', function (req, res, next) {
+  res.render('cities/new')
+});
+
+router.post('/cities/create', function (req, res, next) {
+  citiesCollection.insert(req.body).then(function (city) {
+    res.redirect('/cities/index')
+  });
+});
+
 module.exports = router;
