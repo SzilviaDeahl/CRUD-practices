@@ -1,1 +1,18 @@
+extends ../layout
 
+block content
+  h1 My Computers
+  table
+    thead
+      tr
+        th Make
+        th Year
+        th Color
+    tbody
+    if computers
+      for computer in computers
+        tr
+          td
+            a(href='/computers/' + computer._id + '/edit')= computer.name
+        tr= computer.year
+        tr= computer.color
