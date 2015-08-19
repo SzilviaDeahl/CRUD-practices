@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+
+  h1 My Favorite Fuits 
+  table
+    thead
+      tr
+        th Name of fruit
+        th Color of fruit
+    tbody
+    if fruits
+     for fruit in fruits
+      tr
+        td
+          a(href='/fruits/' + fruit._id + '/edit')= fruit.name
+        td= fruit.color
+  p
+    a(href='/fruits/new') Add Fruit
