@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+
+  h1= fruit.name
+  form(action='/fruits/' + fruit._id + '/update' method= 'POST')
+    include includes/form
+  form(action='/fruits/' + fruit._id + '/delete' method= 'POST')
+    input(type='submit' value='Delete')
