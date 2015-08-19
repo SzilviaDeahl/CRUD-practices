@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+
+  h1 My List of Computers
+  table
+    thead
+      tr
+        th Make
+        th Year
+        th Color
+    tbody
+    if computers
+      for computer in computers
+        tr
+          td
+            a(href='/computer/' + computer._id + '/edit')=computer.name
+          td= computer.year 
+          td= computer.color
+  p
+    a(href='/computers/new') Add New Computer
