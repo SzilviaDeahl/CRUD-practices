@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+
+  h1= computer.name
+  form(action='/computers/' + computer._id + '/update' method= 'POST')
+    include includes/form
+  form(action='/computer/' + computer._id + '/delete' method='POST')
+    input(type='submit' value='Delete')

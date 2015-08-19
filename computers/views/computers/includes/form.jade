@@ -1,0 +1,14 @@
+p
+  label(for='name') Make
+p
+  input(id='name' type='text' name='name' value=(computer ? computer.name : ''))
+p
+  label(for='year') Year 
+p
+  input(id='year' name='year' type='text' value=(computer ? computer.year : ''))
+p
+  label(for='color') Color 
+p
+  input(id='color' name='color' type='text' value=(computer ? computer.color : ''))
+p
+  input(id='submit' type='submit' value='Submit')

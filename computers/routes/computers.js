@@ -9,6 +9,16 @@ router.get('/computers/index', function (req, res, next) {
   });
 });
 
+router.get('/computers/new', function (req, res, next) {
+  res.render('computers/new')
+});
+
+router.post('/computers/create', function (req, res, next) {
+  compCollections.insert(req.body).then(function (computer) {
+    res.redirect('/computers/index')
+  });
+});
+
 
 
 
