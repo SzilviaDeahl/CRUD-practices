@@ -1,0 +1,7 @@
+extends ../layout
+
+block content
+
+  h1= movie.name
+  form(action='/movies/' + movie._id + '/update' method='POST')
+    include includes/form

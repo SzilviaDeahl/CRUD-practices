@@ -25,4 +25,16 @@ router.get('/movies/show', function (req,res, next) {
   });
 });
 
+router.get('/movies/:id/edit', function (req, res, next) {
+  movieCollection.findOne({_id: req.params.id}, function (err, movie) {
+    res.render('movies/edit', {movie:movie})
+  });
+});
+
+router.post('/movies/:id/update', function (req, res, next) {
+  movieCollection.update({_id: req.params.id}, req.body).then(function (movie) {
+    res.redirect('/movies/index')
+  });
+});
+
 module.exports = router;
