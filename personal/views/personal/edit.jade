@@ -2,7 +2,7 @@ extends ../layout
 
 block content
 
-  h1 hello
+  h1= inf.name
   form(action='/personal/' + inf._id + '/update' method='POST')
     include includes/form
   form(action='/personal/' + inf._id + '/delete' method='POST')
