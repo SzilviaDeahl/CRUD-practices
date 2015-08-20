@@ -37,4 +37,10 @@ router.post('/movies/:id/update', function (req, res, next) {
   });
 });
 
+router.post('/movies/:id/delete', function (req, res, next) {
+  movieCollection.remove({_id: req.params.id}, req.body).then(function (movie) {
+    res.redirect('/movies/index')
+  });
+});
+
 module.exports = router;
