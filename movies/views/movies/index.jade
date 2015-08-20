@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+
+  h1 Favorite Movies
+  table
+    thead
+      tr
+        th Title
+        th Type
+    tbody
+    if movies 
+      for movie in movies
+        tr
+          td
+            a(href='/movies/' + movie._id + '/edit')= movie.name
+          td= movie.type 
+  p
+    a(href='/movies/new') Add Movie 
