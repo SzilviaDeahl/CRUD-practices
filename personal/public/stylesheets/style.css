@@ -6,3 +6,20 @@ body {
 a {
   color: #00B7FF;
 }
+
+table {
+  border: 2px solid blue;
+  border-collapse: collapse;
+}
+
+th {
+  border-right: 1px solid blue;
+  border-bottom: 1px solid blue;
+  padding: 10px;
+}
+
+td {
+  border-right: 1px solid blue;
+  border-bottom: 1px solid blue;
+  padding: 5px;
+}
