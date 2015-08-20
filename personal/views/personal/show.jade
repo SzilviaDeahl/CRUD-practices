@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+  
+  h1 My Personal Things
+  table
+    thead
+      tr
+        th Name
+        th Favorite Color
+        th Favorite Food
+        th Favorite Car
+    tbody
+    if info 
+      for inf in info
+        tr
+          td
+            a(href='/personal/' + inf._id + '/edit')= inf.name
+          td= inf.color   
+          td= inf.food 
+          td= inf.car 

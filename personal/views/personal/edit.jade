@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+
+  h1 hello
+  form(action='/personal/' + inf._id + '/update' method='POST')
+    include includes/form
+  form(action='/personal/' + inf._id + '/delete' method='POST')
+    input(type='submit' value='Delete')
