@@ -15,7 +15,13 @@ router.get('/airplanes/new', function (req, res, next) {
 
 router.post('/airplanes/create', function (req, res, next) {
   planesCollection.insert(req.body).then(function (plane) {
-    res.redirect('/airplanes/show', {planes: planes})
+    res.redirect('/airplanes/show')
+  });
+});
+
+router.get('/airplanes/show', function (req, res, next) {
+  planesCollection.find({}, function (err, planes) {
+    res.render('airplanes/show', {planes: planes})
   });
 });
 
