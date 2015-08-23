@@ -37,4 +37,10 @@ router.post('/airplanes/:id/update', function (req, res, next) {
   });
 });
 
+router.post('/airplanes/:id/delete', function (req, res, next) {
+  planesCollection.remove({_id: req.params.id}, req.body).then(function (plane) {
+    res.redirect('/airplanes/index')
+  });
+});
+
 module.exports = router;
