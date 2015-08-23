@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+
+  h1 plane.name
+  form(action='/airplanes/' + plane._id + '/update' method='POST')
+    include includes/form
+  form(action='/airplanes/' + plane._id + '/delete' method='POST')
+    input(type='submit' value='Delete')

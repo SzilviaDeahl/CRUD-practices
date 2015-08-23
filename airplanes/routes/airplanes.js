@@ -9,4 +9,14 @@ router.get('/airplanes/index', function (req, res, next) {
   });
 });
 
+router.get('/airplanes/new', function (req, res, next) {
+  res.render('airplanes/new')
+});
+
+router.post('/airplanes/create', function (req, res, next) {
+  planesCollection.insert(req.body).then(function (plane) {
+    res.redirect('/airplanes/show', {planes: planes})
+  });
+});
+
 module.exports = router;
