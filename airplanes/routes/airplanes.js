@@ -25,4 +25,16 @@ router.get('/airplanes/show', function (req, res, next) {
   });
 });
 
+router.get('/airplanes/:id/edit', function (req, res, next) {
+  planesCollection.findOne({_id: req.params.id}, function (err, plane) {
+    res.render('airplanes/edit', {plane: plane})
+  });
+});
+
+router.post('/airplanes/:id/update', function (req, res, next) {
+  planesCollection.update({_id: req.params.id}, req.body).then(function (plane) {
+    res.redirect('/airplanes/index')
+  });
+});
+
 module.exports = router;
