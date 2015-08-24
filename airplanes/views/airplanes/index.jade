@@ -8,6 +8,7 @@ block content
       tr
         th type
         th size
+        th color
     tbody
     if planes
      for plane in planes
@@ -15,5 +16,6 @@ block content
         td  
           a(href='/airplanes/' + plane._id + '/edit')= plane.type
         td= plane.size
+        td= plane.color
   p
     a(href='/airplanes/new') Add Airplane 
