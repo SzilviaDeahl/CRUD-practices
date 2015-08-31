@@ -6,7 +6,18 @@ var peopleCollection = db.get('people');
 router.get('/people/index', function (req, res, next) {
   peopleCollection.find({}, function (err, people) {
     res.render('people/index', {people: people})
-  })
-})
+  });
+});
+
+router.get('/people/new', function (req, res, next) {
+  res.render('people/new')
+});
+
+router.post('/people/create', function (req, res, next) {
+  peopleCollection.insert(req.body).then(function (person) {
+    res.redirect('/people/show')
+  });
+});
+
 
 module.exports = router;
