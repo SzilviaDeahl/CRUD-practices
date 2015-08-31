@@ -25,4 +25,16 @@ router.get('/people/show', function (req, res, next) {
   });
 });
 
+router.get('/people/:id/edit', function (req, res, next) {
+  peopleCollection.findOne({_id: req.params.id}, function (err, person) {
+    res.render('people/edit', {person: person})
+  });
+});
+
+router.post('/people/:id/update', function (req, res, next) {
+  peopleCollection.update({_id: req.params.id}, req.body).then(function (err, person) {
+    res.redirect('/people/index')
+  });
+});
+
 module.exports = router;
