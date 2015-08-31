@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+  h1 We Are The People 
+  table
+    thead
+      tr
+        th Person's Name
+        th Person's Eye Color
+        th Person's Hair Color
+        th Age
+    tbody
+    if people
+      for person in people
+        tr
+          td
+            a(href='/people/' + person._id + '/edit')= person.name
+          td= person.eye 
+          td= person.hair 
+          td= person.age   
+  
