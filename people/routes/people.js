@@ -37,4 +37,10 @@ router.post('/people/:id/update', function (req, res, next) {
   });
 });
 
+router.post('/people/:id/delete', function (req, res, next) {
+  peopleCollection.remove({_id: req.params.id}, req.body).then(function (err, person) {
+    res.redirect('/people/index')
+  });
+});
+
 module.exports = router;
