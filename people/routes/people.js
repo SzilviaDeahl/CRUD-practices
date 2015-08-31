@@ -19,5 +19,10 @@ router.post('/people/create', function (req, res, next) {
   });
 });
 
+router.get('/people/show', function (req, res, next) {
+  peopleCollection.find({}, function (err, people) {
+    res.render('people/show', {people: people})
+  });
+});
 
 module.exports = router;
