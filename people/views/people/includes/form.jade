@@ -1,0 +1,18 @@
+p
+  label(for='name') Name 
+p
+  input(id='name' type='text' name='name' value=(person ? person.name : ''))
+p
+  label(for='eye') Eye Color
+p
+  input(id='eye' type='text' name='eye' value=(person ? person.eye : ''))
+p
+  label(for='hair') Hair Color 
+p
+  input(id='hair' type='text' name='hair' value=(person ? person.hair : ''))
+p
+  label(for='age') Age 
+p
+  input(id='age' type='text' name='age' value=(person ? person.age : ''))
+p
+  input(type='submit' value='Submit')
