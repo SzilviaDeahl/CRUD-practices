@@ -1,0 +1,14 @@
+p
+  label(for='name') Name 
+p
+  input(id='name' name='name' type='text' value=(car ? car.name : ""))
+p
+  label(for='color') Color 
+p
+  input(id='color' name='color' type='text' value=(car ? car.color : ""))
+p
+  label(for='year') Year 
+p
+  input(id='year' name='year' type='text' value=(car ? car.year : ""))
+p
+  input(type='submit' value='Submit')

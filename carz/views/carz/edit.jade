@@ -1,0 +1,8 @@
+extends ../layout 
+
+block content
+  h1 Add New Car
+  form(action='/carz/' + car._id + '/update' method='POST')
+    include includes/form
+  form(action='/carz/' + car._id + '/delete' method='POST')
+    

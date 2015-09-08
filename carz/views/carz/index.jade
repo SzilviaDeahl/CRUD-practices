@@ -3,5 +3,19 @@ extends ../layout
 block content
 
   h1 These are my favorite cars!
-  
-  a(href='/carz/new') Add New Car
+  table
+    thead
+      tr
+        th Name
+        th Color
+        th Year
+    tbody
+    if carz
+      for car in carz 
+        tr
+          td
+            a(href='/carz/' + car._id + '/edit')=car.name 
+          td= car.color 
+          td= car.year  
+  p 
+    a(href='/carz/new') Add New Car
