@@ -38,4 +38,10 @@ router.post('/carz/:id/update', function (req, res, next) {
   });
 });
 
+router.post('/carz/:id/delete', function (req, res, next) {
+  carzCollections.remove({_id: req.params.id}, req.body).then(function (car) {
+    res.redirect('/carz/index')
+  });
+});
+
 module.exports = router;
