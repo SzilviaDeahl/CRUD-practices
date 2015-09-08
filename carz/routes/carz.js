@@ -26,5 +26,16 @@ router.get('/carz/show', function (req, res, next) {
   });
 });
 
+router.get('/carz/:id/edit', function (req, res, next) {
+  carzCollections.findOne({_id: req.params.id}, function (err, car) {
+    res.render('carz/edit', {car: car})
+  });
+});
+
+router.post('/carz/:id/update', function (req, res, next) {
+  carzCollections.update({_id: req.params.id}, req.body).then(function (car) {
+    res.redirect('/carz/index')
+  });
+});
 
 module.exports = router;
