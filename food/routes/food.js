@@ -20,4 +20,10 @@ router.post('/food/create', function (req, res, next) {
   })
 });
 
+router.get('/food/:id/show', function (req, res, next) {
+  foodCollection.findOne({_id: req.params.id}, function (error, food) {
+    res.render('food/show', {food: food})
+  })
+});
+
 module.exports = router;
