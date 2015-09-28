@@ -1,0 +1,10 @@
+p
+  label(for='kind') Food kind
+p
+  input(id='kind' type='text' name='kind' value=(food ? food.kind : ""))
+p
+  label(for='size') Food size
+p
+  input(id='size' type='text' name='size' value=(food ? food.size : ""))
+p
+  input(id='submit' value='Submit' type='submit')

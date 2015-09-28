@@ -3,3 +3,15 @@ extends ../layout
 block content
 
   h1 My favorite foods
+  table
+    thead
+      td
+        th Food kind
+        th Food size
+    tbody
+    if food in foods
+      td
+        tr food.kind
+        tr food.size
+  p
+    a(href='/food/new') Add Item
