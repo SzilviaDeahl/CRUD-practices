@@ -4,36 +4,42 @@ var db = require('monk')('localhost/myFood');
 var foodCollection = db.get('foods');
 
 
-router.get('/food/index', function (req, res, next) {
+router.get('/', function (req, res, next) {
   foodCollection.find({}, function (err, foods) {
-    res.render('food/', {foods: foods})
+    res.render('food/index', {foods: foods})
   })
 });
 
-router.get('/food/new', function (req, res, next) {
+router.get('/new', function (req, res, next) {
   res.render('food/new')
 });
 
-router.post('/food/create', function (req, res, next) {
+router.post('/create', function (req, res, next) {
   foodCollection.insert(req.body).then(function (food) {
     res.redirect('/food/show')
   })
 });
 
-router.get('/food/:id/show', function (req, res, next) {
-  foodCollection.findOne({_id: req.params.id}, function (error, food) {
-    res.render('food/show', {food: food})
+router.get('/show', function (req, res, next) {
+  foodCollection.find({}, function (error, foods) {
+    res.render('food/show', {foods: foods})
   })
 });
 
-router.get('/food/:id/edit', function (req, res, next) {
+router.get('/:id/edit', function (req, res, next) {
   foodCollection.findOne({_id: req.params.id}, function (err, food) {
     res.render('food/edit', {food: food})
   })
 });
 
-router.post('/food/:id/update', function (req, res, next) {
-  foodCollection.update(req.body).then(function (food) {
+router.post('/:id/update', function (req, res, next) {
+  foodCollection.update({_id: req.params.id}, req.body).then(function (food) {
+    res.redirect('/food/index')
+  })
+});
+
+router.post('/:id/delete', function (req, res, next) {
+  foodCollection.delete({_id: req.params.id}, req.body).then(function (food) {
     res.redirect('/food/index')
   })
 });
