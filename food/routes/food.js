@@ -26,4 +26,16 @@ router.get('/food/:id/show', function (req, res, next) {
   })
 });
 
+router.get('/food/:id/edit', function (req, res, next) {
+  foodCollection.findOne({_id: req.params.id}, function (err, food) {
+    res.render('food/edit', {food: food})
+  })
+});
+
+router.post('/food/:id/update', function (req, res, next) {
+  foodCollection.update(req.body).then(function (food) {
+    res.redirect('/food/index')
+  })
+});
+
 module.exports = router;
