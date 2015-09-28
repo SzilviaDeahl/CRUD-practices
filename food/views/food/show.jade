@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+
+  h1 My favorite foods
+  table
+    thead
+      tr
+        th Food kind
+        th Food size
+    tbody
+    if foods 
+      for food in foods
+        tr
+          td 
+            a(href='/food/' + food._id + '/edit')=food.kind
+          td=food.size

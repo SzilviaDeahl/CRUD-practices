@@ -5,13 +5,15 @@ block content
   h1 My favorite foods
   table
     thead
-      td
+      tr
         th Food kind
         th Food size
     tbody
-    if food in foods
-      td
-        tr food.kind
-        tr food.size
+    if foods
+      for food in foods
+        tr
+          td
+            a(href='/food/' + food._id + '/edit')=food.kind
+          td=food.size
   p
     a(href='/food/new') Add Item

@@ -34,13 +34,13 @@ router.get('/:id/edit', function (req, res, next) {
 
 router.post('/:id/update', function (req, res, next) {
   foodCollection.update({_id: req.params.id}, req.body).then(function (food) {
-    res.redirect('/food/index')
+    res.redirect('/food')
   })
 });
 
 router.post('/:id/delete', function (req, res, next) {
-  foodCollection.delete({_id: req.params.id}, req.body).then(function (food) {
-    res.redirect('/food/index')
+  foodCollection.remove({_id: req.params.id}, req.body).then(function (food) {
+    res.redirect('/food')
   })
 });
 
